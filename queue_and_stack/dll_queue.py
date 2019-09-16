@@ -8,9 +8,11 @@ class Queue:
     # Why is our DLL a good choice to store our elements?
     self.storage = 
 
+  # Insertion is "enqueue" 
   def enqueue(self, value):
     pass
   
+  # Deletion is "dequeue"
   def dequeue(self):
     pass
 
