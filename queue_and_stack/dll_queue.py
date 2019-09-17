@@ -30,4 +30,4 @@ class Queue:
 
   # Returns the length of the queue
   def len(self):
-    return self.size 
+    return self.storage.length
