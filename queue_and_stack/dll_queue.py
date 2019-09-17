@@ -5,7 +5,7 @@ from doubly_linked_list import DoublyLinkedList
 class Queue:
   def __init__(self):
     self.size = 0
-    # DLL to store our elements because... 
+    # DLL to store our elements in a queue because we constantly change the length of
     self.storage = DoublyLinkedList() 
     
 
@@ -24,9 +24,7 @@ class Queue:
     if self.size > 0:
       # Decrement the length of the queue
       self.size -= 1
-      head_item = self.storage.head
-      self.storage.remove_from_head()
-      return head_item.value 
+      return self.storage.remove_from_head()
     else: 
       return None 
 
