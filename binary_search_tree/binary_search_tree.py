@@ -32,20 +32,27 @@ class BinarySearchTree:
         robot_light = False 
 
   def contains(self, target):
-    # Start at the root 
+    # Start at the root, create variable to store current node
+    current_node = self 
     
-    # If target is current node
-    if target is self.value: 
-      # Return current node 
-      return self.value
-    # Else if target less than current node
-    elif target < self.value: 
-      # Make left node your current 
-      self.value == self.left
-    # If target is greater than
-    else:  
-      # Make right node your current
-      self.value == self.right 
+    # Create a boolean for running your while loop 
+    robot_light = True 
+    
+    while robot_light: 
+      # If target is current node
+      if target is current_node.value: 
+        # You've found the value! Turn off your boolean
+        robot_light = False 
+        # Return True  
+        return True 
+      # Else if target less than current node
+      elif target < current_node.value: 
+        # Make left node your current 
+        current_node.value = current_node.left 
+      # Otherwise, your target must be greater than 
+      else:  
+        # Make right node your current
+        current_node.value = current_node.right 
   
 
   def get_max(self):
