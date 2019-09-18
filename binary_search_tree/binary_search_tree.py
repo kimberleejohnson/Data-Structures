@@ -10,9 +10,15 @@ class BinarySearchTree:
     self.right = None
 
   def insert(self, value):
+    # Start at the root 
+    # If the element already there, return None because no duplicates 
+    # If not there, then split the tree in half (left or right side), and determine which side value should go 
+    # Repeat 
     pass
 
   def contains(self, target):
+    # Start at the root 
+    # Compare the target to the root. Based on comparison, go left (target lower) or right (target higher)
     pass
 
   def get_max(self):

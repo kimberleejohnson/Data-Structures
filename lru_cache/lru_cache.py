@@ -21,8 +21,11 @@ class LRUCache:
     self.nodes = 0 
     # DoublyLinkedList holding entries in correct order 
     # DoublyLinkedList are perfect at keeping track of orders (but not knowing each value, counts through each)
+    # Provides order, ever node, all information in order, most recently and furthest recently used 
     self.cache = DoublyLinkedList() 
     # Storage dict for every node in cache
+    # Provides fast access 
+    # Cache is storage, dictionary
     self.storage = {} 
 
   """
