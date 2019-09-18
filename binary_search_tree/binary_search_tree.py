@@ -77,4 +77,17 @@ class BinarySearchTree:
     return current_highest 
 
   def for_each(self, cb):
-    pass
+    # We want to perform a function on every item in the tree
+    # Start with the current value, perform it  
+    # If you can move right, call the newly defined function passing in cb
+    # If you can move left, keep performing the callback 
+
+    current_node = self 
+
+    cb(current_node.value)
+
+    if current_node.right: 
+      current_node.right.for_each(cb)
+    
+    if current_node.left: 
+      current_node.left.for_each(cb)
