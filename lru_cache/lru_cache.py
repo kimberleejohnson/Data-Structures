@@ -20,6 +20,7 @@ class LRUCache:
     # Current number of nodes 
     self.nodes = 0 
     # DoublyLinkedList holding entries in correct order 
+    # DoublyLinkedList are perfect at keeping track of orders (but not knowing each value, counts through each)
     self.cache = DoublyLinkedList() 
     # Storage dict for every node in cache
     self.storage = {} 
@@ -67,6 +68,7 @@ class LRUCache:
       # Delete the old storage value 
       self.cache.delete(storage_value[1])
       # New value added to the front 
+      # Because most recently used 
       self.cache.add_to_head([key, value])
       self.storage[key] = [value, self.cache.head]
       return 
