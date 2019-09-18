@@ -56,7 +56,25 @@ class BinarySearchTree:
   
 
   def get_max(self):
-    pass
+    # Start at the root, create variable to hold current node and current highest value 
+    current_node = self 
+    current_highest = self.value 
+
+    # Boolean for loop 
+    robot_light = True 
+
+    while robot_light: 
+      # Keep moving to the right until you no longer can 
+      if current_node.right: 
+        current_node = current_node.right 
+      # But, if you *can't* move to the right any more 
+      elif not current_node.right: 
+        # Stop the loop 
+        robot_light = False 
+      # And evaluate, resetting highest value if you need 
+      if current_node.value >= current_highest: 
+        current_highest = current_node.value
+    return current_highest 
 
   def for_each(self, cb):
     pass
