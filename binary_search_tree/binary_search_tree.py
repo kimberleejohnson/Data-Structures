@@ -45,14 +45,21 @@ class BinarySearchTree:
         robot_light = False 
         # Return True  
         return True 
-      # Else if target less than current node
-      elif target < current_node.value: 
+      # Else if target less than current node, and can move left
+      elif current_node.value >= target and current_node.left: 
         # Make left node your current 
-        current_node.value = current_node.left 
-      # Otherwise, your target must be greater than 
-      else:  
-        # Make right node your current
-        current_node.value = current_node.right 
+        current_node = current_node.left
+      # But what if you've searched the whole list? Can't go right any more.  
+      elif current_node.value >= target and not current_node.left: 
+        robot_light = False 
+        return False 
+      # Else if target greater than current node, and can move right 
+      elif current_node.value <= target and current_node.right: 
+        current_node = current_node.right
+      # But what if you've gone through the whole list? 
+      elif current_node.value <= target and not current_node.right: 
+        robot_light = False 
+        return False 
   
 
   def get_max(self):
